@@ -8,8 +8,8 @@
 <link rel="icon" href="assets/logo.png">
 <style>
   :root{
-    --navy:#F4F0E8; --navy-2:#1C232E; --gold:#E0A23A; --gold-soft:#E0A23A;
-    --ink:#C9D0DA; --muted:#9AA5B4; --bg:#12161C; --card:#1C232E; --line:#2C3644;
+    --navy:#FFFFFF; --navy-2:#15171B; --gold:#B3202F; --gold-soft:#E5505F;
+    --ink:#D5D7DB; --muted:#9A9EA6; --bg:#0B0C0E; --card:#15171B; --line:#26292F;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -17,21 +17,21 @@
   .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
   h1,h2,h3{color:var(--navy);line-height:1.2}
   h2{font-size:34px;margin-bottom:12px}
-  .kicker{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px}
   section{padding:72px 0}
-  .btn{display:inline-block;background:var(--gold);color:#12161C;font-weight:700;padding:16px 32px;border-radius:8px;text-decoration:none;font-size:18px}
-  .btn:hover{background:#F0B450}
+  .btn{display:inline-block;background:var(--gold);color:#FFFFFF;font-weight:700;padding:16px 32px;border-radius:8px;text-decoration:none;font-size:18px}
+  .btn:hover{background:#CC2A3B}
   .btn-ghost{display:inline-block;border:2px solid var(--navy);color:var(--navy);font-weight:700;padding:14px 30px;border-radius:8px;text-decoration:none;font-size:18px}
   /* topo */
   header{background:#FFFFFF;border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:10}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;max-width:1080px;margin:0 auto}
   .nav img{height:54px}
-  .nav nav a{color:#12161C;text-decoration:none;font-weight:600;margin-left:22px;font-size:15px}
-  .nav nav a.cta{color:#9A6A10}
+  .nav nav a{color:#0B0C0E;text-decoration:none;font-weight:600;margin-left:22px;font-size:15px}
+  .nav nav a.cta{color:#B3202F}
   /* hero */
-  .hero{background:linear-gradient(160deg, #12161C 0%, #1C232E 100%);color:#C9D0DA;padding:96px 0;border-bottom:1px solid var(--line)}
+  .hero{background:linear-gradient(160deg, #0B0C0E 0%, #15171B 100%);color:#D5D7DB;padding:96px 0;border-bottom:1px solid var(--line)}
   .hero h1{color:#FFFFFF;font-size:50px;max-width:760px;margin-bottom:20px}
-  .hero p.sub{font-size:22px;max-width:680px;color:#C9D0DA;margin-bottom:36px}
+  .hero p.sub{font-size:22px;max-width:680px;color:#D5D7DB;margin-bottom:36px}
   .hero .mark{color:var(--gold-soft)}
   /* cards */
   .grid{display:grid;gap:20px}
@@ -41,7 +41,7 @@
   .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px}
   .card h3{font-size:20px;margin-bottom:8px}
   .card p{color:var(--muted);font-size:16px}
-  .num{font-size:15px;font-weight:700;color:var(--gold);letter-spacing:1px}
+  .num{font-size:15px;font-weight:700;color:var(--gold-soft);letter-spacing:1px}
   /* quem sou */
   .quem{display:grid;grid-template-columns:320px 1fr;gap:40px;align-items:start}
   .quem img{width:100%;border-radius:12px;border:1px solid var(--line)}
@@ -50,12 +50,12 @@
   .stat b{display:block;font-size:26px;color:var(--navy)}
   .stat span{font-size:14px;color:var(--muted)}
   /* diagnóstico */
-  .diag{background:#1C232E;border:2px solid var(--gold);color:#C9D0DA;border-radius:16px;padding:56px;text-align:center}
+  .diag{background:#15171B;border:2px solid var(--gold);color:#D5D7DB;border-radius:16px;padding:56px;text-align:center}
   .diag h2{color:#FFFFFF}
-  .diag p{max-width:640px;margin:12px auto 32px;color:#C9D0DA;font-size:18px}
+  .diag p{max-width:640px;margin:12px auto 32px;color:#D5D7DB;font-size:18px}
   footer{padding:36px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line);text-align:center}
-  footer a{color:var(--gold)}
-  .lema{background:var(--gold);color:#12161C;padding:44px 0;text-align:center}
+  footer a{color:var(--gold-soft)}
+  .lema{background:var(--gold);color:#FFFFFF;padding:44px 0;text-align:center}
   .lema p{font-size:30px;font-weight:700;line-height:1.3;max-width:900px;margin:0 auto}
   @media (max-width:860px){
     .g4,.g3,.g2{grid-template-columns:1fr}
@@ -75,17 +75,17 @@
       <a href="#problema">O problema</a>
       <a href="#como">Como trabalho</a>
       <a href="#quem">Quem sou</a>
-      <a class="cta" href="#diagnostico">Diagnóstico gratuito</a>
+      <a class="cta" href="diagnostico.html">Diagnóstico gratuito</a>
     </nav>
   </div>
 </header>
 
 <div class="hero">
   <div class="wrap">
-    <p class="kicker" style="color:var(--gold-soft)">Jimay Consultoria · Gestão operacional integrada</p>
+    <p class="kicker" style="color:var(--gold-soft)">Jimay Consultoria · Pessoas. Processos. Resultados.</p>
     <h1>Da venda ao caixa, <span class="mark">sem apagar incêndios.</span></h1>
     <p class="sub">Consultoria em excelência operacional para indústrias: processo e sistema em um só fluxo, do pedido ao lucro, com margem conhecida, prazo real e custo visível.</p>
-    <a class="btn" href="#diagnostico">Agendar diagnóstico gratuito</a>
+    <a class="btn" href="diagnostico.html">Fazer o diagnóstico gratuito</a>
   </div>
 </div>
 
@@ -105,19 +105,19 @@
   </div>
 </section>
 
-<section id="como" style="background:#161B23;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<section id="como" style="background:#101216;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <p class="kicker">Como trabalho</p>
     <h2>Método claro, sem surpresas</h2>
     <p style="max-width:720px;color:var(--muted);margin-bottom:32px">Projeto de escopo fechado: prazo, reuniões e entregas definidos antes de começar. Sem cobrança por hora. Remoto por padrão, presencial no diagnóstico e no treinamento.</p>
     <div class="grid g3">
-      <div class="card"><p class="num">ETAPA 1</p><h3>Diagnóstico</h3><p>Conversa de 30 a 40 minutos e um mini-relatório com o gargalo que mais pesa no seu caixa. Gratuito e sem compromisso.</p></div>
+      <div class="card"><p class="num">ETAPA 1</p><h3>Diagnóstico</h3><p>Faça aqui no site, em 10 minutos, e veja a nota da sua operação. Depois, uma conversa de 30 a 40 minutos para ler o resultado juntos. Gratuito.</p></div>
       <div class="card"><p class="num">ETAPA 2</p><h3>Projeto</h3><p>Implantação área por área, junto com a sua equipe: cadastro, engenharia de produto, custo e preço, PCP, apontamento e pós-cálculo. Com o seu sistema atual ou com o Sistema Jimay.</p></div>
       <div class="card"><p class="num">ETAPA 3</p><h3>Governança</h3><p>Acompanhamento mensal dos números e mentoria dos líderes, para o ganho não se perder quando a rotina aperta.</p></div>
     </div>
     <div class="grid g2" style="margin-top:20px">
       <div class="card" style="border-top:4px solid var(--gold)"><h3>Pequena indústria</h3><p>A operação roda em planilhas soltas e depende do dono. Organizo o fluxo e implanto o Sistema Jimay, nosso software de gestão, junto com a equipe: o conhecimento sai da cabeça do dono e vira processo.</p></div>
-      <div class="card" style="border-top:4px solid #9AA5B4"><h3>Média e grande indústria</h3><p>O ERP existe, mas é subutilizado. Destravo o sistema que você já paga, levo o uso ao chão de fábrica e simplifico o que sobra de controle.</p></div>
+      <div class="card" style="border-top:4px solid #9A9EA6"><h3>Média e grande indústria</h3><p>O ERP existe, mas é subutilizado. Destravo o sistema que você já paga, levo o uso ao chão de fábrica e simplifico o que sobra de controle.</p></div>
     </div>
     <p style="margin-top:24px;color:var(--muted)">Atendo indústrias de produção sob encomenda e seriada — gráfica, embalagem, confecção e setores afins — em todo o Brasil.</p>
   </div>
@@ -150,10 +150,10 @@
     <div class="diag">
       <p class="kicker" style="color:var(--gold-soft)">Comece por aqui</p>
       <h2>Onde a sua fábrica está deixando dinheiro na mesa hoje?</h2>
-      <p>Agende um diagnóstico gratuito de 30 a 40 minutos e receba um mini-relatório com o seu principal gargalo operacional. Sem compromisso.</p>
-      <a class="btn" href="https://wa.me/5511984307823?text=Ol%C3%A1%2C%20Rafael.%20Quero%20agendar%20o%20diagn%C3%B3stico%20gratuito%20da%20Jimay." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      <p>Responda 30 perguntas em cerca de 10 minutos e veja na hora a nota da sua operação, área por área, e o seu maior gargalo. É gratuito e sem compromisso.</p>
+      <a class="btn" href="diagnostico.html">Fazer o diagnóstico agora</a>
       &nbsp;&nbsp;
-      <a class="btn-ghost" style="border-color:#C9D0DA;color:#F4F0E8" href="https://www.linkedin.com/in/rafael-med-costa/" target="_blank" rel="noopener">Ver meu LinkedIn</a>
+      <a class="btn-ghost" style="border-color:#D5D7DB;color:#FFFFFF" href="https://wa.me/5511984307823?text=Ol%C3%A1%2C%20Rafael.%20Quero%20conversar%20sobre%20a%20Jimay." target="_blank" rel="noopener">Falar no WhatsApp</a>
     </div>
   </div>
 </section>

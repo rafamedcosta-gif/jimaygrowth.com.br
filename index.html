@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jimay Consultoria — Gestão operacional integrada para indústrias</title>
+<meta name="description" content="Consultoria em excelência operacional para indústrias: preço com margem conhecida, prazo com base real e custo visível, da venda ao caixa. Diagnóstico gratuito de 30 a 40 minutos.">
+<link rel="icon" href="assets/logo.png">
+<style>
+  :root{
+    --navy:#1B2A4A; --navy-2:#223559; --gold:#C9962E; --gold-soft:#E8C547;
+    --ink:#22303F; --muted:#5B6673; --bg:#F7F5F1; --card:#FFFFFF; --line:#E4E0D8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI', Tahoma, Arial, sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{color:var(--navy);line-height:1.2}
+  h2{font-size:34px;margin-bottom:12px}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+  section{padding:72px 0}
+  .btn{display:inline-block;background:var(--gold);color:#FFFFFF;font-weight:700;padding:16px 32px;border-radius:8px;text-decoration:none;font-size:18px}
+  .btn:hover{background:#B28427}
+  .btn-ghost{display:inline-block;border:2px solid var(--navy);color:var(--navy);font-weight:700;padding:14px 30px;border-radius:8px;text-decoration:none;font-size:18px}
+  /* topo */
+  header{background:#FFFFFF;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;max-width:1080px;margin:0 auto}
+  .nav img{height:54px}
+  .nav nav a{color:var(--navy);text-decoration:none;font-weight:600;margin-left:22px;font-size:15px}
+  .nav nav a.cta{color:var(--gold)}
+  /* hero */
+  .hero{background:linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%);color:#E9EDF4;padding:96px 0}
+  .hero h1{color:#FFFFFF;font-size:50px;max-width:760px;margin-bottom:20px}
+  .hero p.sub{font-size:22px;max-width:680px;color:#C6CFDD;margin-bottom:36px}
+  .hero .mark{color:var(--gold-soft)}
+  /* cards */
+  .grid{display:grid;gap:20px}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px}
+  .card h3{font-size:20px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:16px}
+  .num{font-size:15px;font-weight:700;color:var(--gold);letter-spacing:1px}
+  /* quem sou */
+  .quem{display:grid;grid-template-columns:320px 1fr;gap:40px;align-items:start}
+  .quem img{width:100%;border-radius:12px;border:1px solid var(--line)}
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
+  .stat{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:8px;padding:14px 18px}
+  .stat b{display:block;font-size:26px;color:var(--navy)}
+  .stat span{font-size:14px;color:var(--muted)}
+  /* diagnóstico */
+  .diag{background:var(--navy);color:#E9EDF4;border-radius:16px;padding:56px;text-align:center}
+  .diag h2{color:#FFFFFF}
+  .diag p{max-width:640px;margin:12px auto 32px;color:#C6CFDD;font-size:18px}
+  footer{padding:36px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line);text-align:center}
+  footer a{color:var(--navy)}
+  @media (max-width:860px){
+    .g4,.g3,.g2{grid-template-columns:1fr}
+    .quem{grid-template-columns:1fr}
+    .hero h1{font-size:36px}
+    .nav nav a{margin-left:12px;font-size:13px}
+    .diag{padding:36px 20px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img src="assets/logo.png" alt="Jimay Consultoria">
+    <nav>
+      <a href="#problema">O problema</a>
+      <a href="#como">Como trabalho</a>
+      <a href="#quem">Quem sou</a>
+      <a class="cta" href="#diagnostico">Diagnóstico gratuito</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="kicker" style="color:var(--gold-soft)">Jimay Consultoria · Gestão operacional integrada</p>
+    <h1>Da venda ao caixa, <span class="mark">sem apagar incêndios.</span></h1>
+    <p class="sub">Consultoria em excelência operacional para indústrias: preço com margem conhecida, prazo com base real e custo visível — em um só fluxo, do pedido ao lucro.</p>
+    <a class="btn" href="#diagnostico">Agendar diagnóstico gratuito</a>
+  </div>
+</div>
+
+<section id="problema">
+  <div class="wrap">
+    <p class="kicker">O problema</p>
+    <h2>Onde a margem vaza na indústria</h2>
+    <p style="max-width:720px;color:var(--muted);margin-bottom:32px">O problema raramente é falta de esforço. É a falta de um fluxo único que ligue venda, fábrica e caixa.</p>
+    <div class="grid g4">
+      <div class="card"><h3>Preço sem margem</h3><p>Vende-se barato e a perda só aparece depois que o pedido sai.</p></div>
+      <div class="card"><h3>Prazo sem base</h3><p>A data é prometida sem saber a capacidade real da fábrica.</p></div>
+      <div class="card"><h3>Custo invisível</h3><p>Refugo, retrabalho e hora de máquina se perdem pelo caminho.</p></div>
+      <div class="card"><h3>Tudo no dono</h3><p>Só ele sabe preço, prazo e prioridade. A empresa trava quando ele falta.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="como" style="background:#FFFFFF;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <p class="kicker">Como trabalho</p>
+    <h2>Método claro, sem surpresas</h2>
+    <p style="max-width:720px;color:var(--muted);margin-bottom:32px">Projeto de escopo fechado: prazo, reuniões e entregas definidos antes de começar. Sem cobrança por hora. Remoto por padrão, presencial no diagnóstico e no treinamento.</p>
+    <div class="grid g3">
+      <div class="card"><p class="num">ETAPA 1</p><h3>Diagnóstico</h3><p>Conversa de 30 a 40 minutos e um mini-relatório com o gargalo que mais pesa no seu caixa. Gratuito e sem compromisso.</p></div>
+      <div class="card"><p class="num">ETAPA 2</p><h3>Projeto</h3><p>Implantação área por área, junto com a sua equipe: cadastro, engenharia de produto, custo e preço, PCP, apontamento e pós-cálculo.</p></div>
+      <div class="card"><p class="num">ETAPA 3</p><h3>Governança</h3><p>Acompanhamento mensal dos números e mentoria dos líderes, para o ganho não se perder quando a rotina aperta.</p></div>
+    </div>
+    <div class="grid g2" style="margin-top:20px">
+      <div class="card" style="border-top:4px solid var(--gold)"><h3>Pequena indústria</h3><p>A operação roda em planilhas soltas e depende do dono. Organizo o fluxo e implanto uma ferramenta leve junto com a equipe: o conhecimento sai da cabeça do dono e vira processo.</p></div>
+      <div class="card" style="border-top:4px solid var(--navy)"><h3>Média e grande indústria</h3><p>O ERP existe, mas é subutilizado. Destravo o sistema que você já paga, levo o uso ao chão de fábrica e simplifico o que sobra de controle.</p></div>
+    </div>
+    <p style="margin-top:24px;color:var(--muted)">Atendo indústrias de produção sob encomenda e seriada — gráfica, embalagem, confecção e setores afins — em todo o Brasil.</p>
+  </div>
+</section>
+
+<section id="quem">
+  <div class="wrap">
+    <p class="kicker">Quem sou</p>
+    <h2>A prática substitui a teoria</h2>
+    <div class="quem" style="margin-top:28px">
+      <img src="assets/rafael.jpg" alt="Rafael Medeiros">
+      <div>
+        <h3 style="font-size:26px">Rafael Medeiros</h3>
+        <p style="color:var(--muted);margin:8px 0 4px">Gestor de Operações | Consultor e Mentor de Liderança Empresarial</p>
+        <p style="margin-top:12px">Conheço esse fluxo por ter implantado na prática, do cadastro do produto ao pós-cálculo — do chão de fábrica à diretoria. O que apresento aqui é o que funciona na fábrica, explicado de um jeito que o dono e o time conseguem usar.</p>
+        <div class="stats">
+          <div class="stat"><b>22 anos</b><span>de indústria</span></div>
+          <div class="stat"><b>16 anos</b><span>na mesma operação</span></div>
+          <div class="stat"><b>100+ pessoas</b><span>lideradas em 5 unidades</span></div>
+          <div class="stat"><b>R$ 1 milhão</b><span>de economia real em um processo automatizado</span></div>
+        </div>
+        <p style="margin-top:16px;color:var(--muted);font-size:15px">Drip-off reconhecido pela WPO · ERP fabril · ISO 9001 e FSC · MBA em Gestão de Projetos</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="diagnostico">
+  <div class="wrap">
+    <div class="diag">
+      <p class="kicker" style="color:var(--gold-soft)">Comece por aqui</p>
+      <h2>Onde a sua fábrica está deixando dinheiro na mesa hoje?</h2>
+      <p>Agende um diagnóstico gratuito de 30 a 40 minutos e receba um mini-relatório com o seu principal gargalo operacional. Sem compromisso.</p>
+      <a class="btn" href="https://wa.me/5511984307823?text=Ol%C3%A1%2C%20Rafael.%20Quero%20agendar%20o%20diagn%C3%B3stico%20gratuito%20da%20Jimay." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      &nbsp;&nbsp;
+      <a class="btn-ghost" style="border-color:#E9EDF4;color:#E9EDF4" href="https://www.linkedin.com/in/rafael-med-costa/" target="_blank" rel="noopener">Ver meu LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b style="color:var(--navy)">Jimay Consultoria</b> · Rafael Medeiros · <a href="https://wa.me/5511984307823">+55 11 98430-7823</a> · <a href="mailto:rafa.med.costa@gmail.com">rafa.med.costa@gmail.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

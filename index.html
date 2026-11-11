@@ -3,89 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jimay Consultoria — Gestão operacional integrada para indústrias</title>
-<meta name="description" content="Consultoria em excelência operacional para indústrias: preço com margem conhecida, prazo com base real e custo visível, da venda ao caixa. Diagnóstico gratuito de 30 a 40 minutos.">
-<link rel="icon" href="assets/logo-jimay-vertical.png">
+<title>Jimay Consultoria — Gestão operacional para indústrias</title>
+<meta name="description" content="Consultoria em excelência operacional para indústrias: preço com margem conhecida, prazo com base real e custo visível, da venda ao caixa. Diagnóstico gratuito online.">
+<link rel="icon" href="assets/jimay-mono.png">
 <style>
   :root{
-    --navy:#FFFFFF; --navy-2:#15171B; --gold:#B3202F; --gold-soft:#E5505F;
-    --ink:#D5D7DB; --muted:#9A9EA6; --bg:#0B0C0E; --card:#15171B; --line:#26292F;
+    --bg:#FAFAF9; --surface:#FFFFFF; --ink:#1F2329; --slate:#393A3F;
+    --muted:#6B7280; --line:#E6E4E1; --wine:#6F172F; --wine-2:#8A1D3A; --wine-soft:#FBF3F5;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:'Segoe UI', Tahoma, Arial, sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-  h1,h2,h3{color:var(--navy);line-height:1.2}
+  body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{color:var(--slate);line-height:1.15;letter-spacing:-.01em}
   h2{font-size:34px;margin-bottom:12px}
-  .kicker{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px}
-  section{padding:72px 0}
-  .btn{display:inline-block;background:var(--gold);color:#FFFFFF;font-weight:700;padding:16px 32px;border-radius:8px;text-decoration:none;font-size:18px}
-  .btn:hover{background:#CC2A3B}
-  .btn-ghost{display:inline-block;border:2px solid var(--navy);color:var(--navy);font-weight:700;padding:14px 30px;border-radius:8px;text-decoration:none;font-size:18px}
-  /* topo */
-  header{background:#0B0C0E;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;max-width:1080px;margin:0 auto}
-  .nav img{height:40px}
-  .nav nav a{color:#D5D7DB;text-decoration:none;font-weight:600;margin-left:22px;font-size:15px}
-  .nav nav a.cta{color:#FFFFFF;background:var(--gold);padding:9px 16px;border-radius:6px}
-  /* hero */
-  .hero{background:linear-gradient(160deg, #0B0C0E 0%, #15171B 100%);color:#D5D7DB;padding:96px 0;border-bottom:1px solid var(--line)}
-  .hero h1{color:#FFFFFF;font-size:50px;max-width:760px;margin-bottom:20px}
-  .hero p.sub{font-size:22px;max-width:680px;color:#D5D7DB;margin-bottom:36px}
-  .hero .mark{color:var(--gold-soft)}
-
-  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
-  .como-fx{background:#111317;border:1px solid var(--line);border-radius:16px;padding:28px;min-height:400px;display:flex;flex-direction:column;gap:18px}
-  .como-fx .tag{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold-soft)}
-  .rail{display:flex;align-items:center;gap:0}
-  .rail .n{width:38px;height:38px;border-radius:50%;border:2px solid #3A3E46;color:#9A9EA6;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex:none;transition:all .4s}
-  .rail .l{height:2px;background:#3A3E46;flex:1;position:relative;overflow:hidden}
-  .rail .l i{position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .6s}
-  .rail .n.done{border-color:#FFFFFF;color:#FFFFFF}
-  .rail .n.on{background:var(--gold);border-color:var(--gold);color:#FFFFFF;transform:scale(1.15)}
-  .rail .l.done i{transform:scaleX(1)}
-  .cena{flex:1;display:flex;flex-direction:column;justify-content:center;gap:8px;transition:opacity .35s,transform .35s}
-  .cena.sai{opacity:0;transform:translateY(8px)}
-  .cena small{color:#9A9EA6;font-size:14px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700}
-  .cena b{color:#FFFFFF;font-size:34px;line-height:1.15}
-  .cena span{color:#D5D7DB;font-size:18px}
-  .medidor{display:flex;flex-direction:column;gap:6px}
-  .medidor div{display:flex;justify-content:space-between;font-size:13px;color:#9A9EA6}
-  .medidor div b{color:#FFFFFF;font-variant-numeric:tabular-nums}
-  .medidor .t{height:8px;border-radius:8px;background:#22252B;overflow:hidden;display:block}
-  .medidor .t i{display:block;height:100%;width:20%;background:linear-gradient(90deg,#B3202F,#E5505F);transition:width .9s}
-  @media (prefers-reduced-motion:reduce){.rail .n,.rail .l i,.cena,.medidor .t i{transition:none}}
-  @media (max-width:860px){.hero-grid{grid-template-columns:1fr}.como-fx{min-height:340px}.cena b{font-size:26px}}
-  /* cards */
-  .grid{display:grid;gap:20px}
+  .kicker{font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--wine);margin-bottom:10px}
+  section{padding:76px 0}
+  .btn{display:inline-block;background:var(--wine);color:#fff;font-weight:700;padding:16px 32px;border-radius:6px;text-decoration:none;font-size:17px;border:0;cursor:pointer}
+  .btn:hover{background:var(--wine-2)}
+  .btn.pulse{animation:pulse 2.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(111,23,47,.34)}50%{box-shadow:0 0 0 14px rgba(111,23,47,0)}}
+  .btn-ghost{display:inline-block;border:2px solid var(--slate);color:var(--slate);font-weight:700;padding:14px 28px;border-radius:6px;text-decoration:none;font-size:17px}
+  .btn-ghost:hover{background:var(--slate);color:#fff}
+  header{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;max-width:1120px;margin:0 auto}
+  .nav img{height:46px}
+  .nav nav a{color:var(--slate);text-decoration:none;font-weight:600;margin-left:22px;font-size:15px}
+  .nav nav a:hover{color:var(--wine)}
+  .nav nav a.cta{color:#fff;background:var(--wine);padding:9px 18px;border-radius:6px}
+  .hero{background:var(--surface);border-bottom:1px solid var(--line);padding:84px 0}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+  .hero h1{font-size:50px;margin-bottom:18px}
+  .hero h1 em{font-style:normal;color:var(--wine)}
+  .hero p.sub{font-size:20px;color:var(--muted);margin-bottom:32px;max-width:560px}
+  .lema{background:var(--slate);color:#fff;padding:40px 0;text-align:center}
+  .lema p{font-size:27px;font-weight:700;line-height:1.35;max-width:940px;margin:0 auto}
+  .lema span{color:#E7A3B2}
+  .grid{display:grid;gap:22px}
   .g4{grid-template-columns:repeat(4,1fr)}
   .g3{grid-template-columns:repeat(3,1fr)}
   .g2{grid-template-columns:repeat(2,1fr)}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px}
-  .card h3{font-size:20px;margin-bottom:8px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:28px;box-shadow:0 1px 3px rgba(31,35,41,.06)}
+  .card h3{font-size:19px;margin-bottom:8px}
   .card p{color:var(--muted);font-size:16px}
-  .num{font-size:15px;font-weight:700;color:var(--gold-soft);letter-spacing:1px}
-  /* quem sou */
-  .quem{display:grid;grid-template-columns:320px 1fr;gap:40px;align-items:start}
-  .quem img{width:100%;border-radius:12px;border:1px solid var(--line)}
+  .ico{width:42px;height:42px;border-radius:8px;background:var(--wine-soft);color:var(--wine);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .ico svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .num{font-size:13px;font-weight:800;color:var(--wine);letter-spacing:1.5px;margin-bottom:6px}
+  .quem{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:start}
+  .quem img{width:100%;border-radius:10px;border:1px solid var(--line)}
   .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
-  .stat{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:8px;padding:14px 18px}
-  .stat b{display:block;font-size:26px;color:var(--navy)}
+  .stat{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:8px;padding:14px 18px}
+  .stat b{display:block;font-size:25px;color:var(--slate)}
   .stat span{font-size:14px;color:var(--muted)}
-  /* diagnóstico */
-  .diag{background:#15171B;border:2px solid var(--gold);color:#D5D7DB;border-radius:16px;padding:56px;text-align:center}
-  .diag h2{color:#FFFFFF}
-  .diag p{max-width:640px;margin:12px auto 32px;color:#D5D7DB;font-size:18px}
-  footer{padding:36px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line);text-align:center}
-  footer a{color:var(--gold-soft)}
-  .lema{background:var(--gold);color:#FFFFFF;padding:44px 0;text-align:center}
-  .lema p{font-size:30px;font-weight:700;line-height:1.3;max-width:900px;margin:0 auto}
-  @media (max-width:860px){
-    .g4,.g3,.g2{grid-template-columns:1fr}
-    .quem{grid-template-columns:1fr}
-    .hero h1{font-size:36px}
-    .nav nav a{margin-left:12px;font-size:13px}
-    .diag{padding:36px 20px}
+  .diag{background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--wine);border-radius:12px;padding:56px;text-align:center;box-shadow:0 2px 10px rgba(31,35,41,.06)}
+  .diag p{max-width:660px;margin:12px auto 30px;color:var(--muted);font-size:18px}
+  footer{padding:34px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line);text-align:center;background:var(--surface)}
+  footer a{color:var(--slate)}
+  /* animação institucional */
+  .fx{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:28px;min-height:392px;display:flex;flex-direction:column;gap:18px}
+  .fx .tag{font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--wine)}
+  .rail{display:flex;align-items:center}
+  .rail .n{width:36px;height:36px;border-radius:50%;border:2px solid #CFCFCB;color:var(--muted);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex:none;background:var(--surface);transition:all .4s}
+  .rail .l{height:2px;background:#DEDDD9;flex:1;position:relative;overflow:hidden}
+  .rail .l i{position:absolute;inset:0;background:var(--wine);transform:scaleX(0);transform-origin:left;transition:transform .6s}
+  .rail .n.done{border-color:var(--slate);color:var(--slate)}
+  .rail .n.on{background:var(--wine);border-color:var(--wine);color:#fff;transform:scale(1.14)}
+  .rail .l.done i{transform:scaleX(1)}
+  .cena{flex:1;display:flex;flex-direction:column;justify-content:center;gap:8px;transition:opacity .35s,transform .35s}
+  .cena.sai{opacity:0;transform:translateY(8px)}
+  .cena small{color:var(--wine);font-size:12px;text-transform:uppercase;letter-spacing:1.8px;font-weight:800}
+  .cena b{color:var(--slate);font-size:32px;line-height:1.15}
+  .cena span{color:var(--muted);font-size:17px}
+  .medidor div{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:6px}
+  .medidor div b{color:var(--slate);font-variant-numeric:tabular-nums}
+  .medidor .t{height:8px;border-radius:8px;background:#EAE8E4;overflow:hidden;display:block}
+  .medidor .t i{display:block;height:100%;width:20%;background:var(--wine);transition:width .9s}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  @media (max-width:900px){
+    .g4,.g3,.g2,.hero-grid,.quem{grid-template-columns:1fr}
+    .hero h1{font-size:34px} .lema p{font-size:21px} .diag{padding:32px 20px}
+    .nav nav a{margin-left:12px;font-size:13px} .nav img{height:38px} .cena b{font-size:25px}
   }
 </style>
 </head>
@@ -93,7 +90,7 @@
 
 <header>
   <div class="nav">
-    <img src="assets/logo-jimay.png" alt="Jimay Consultoria">
+    <img src="assets/jimay-horizontal.png" alt="Jimay Consultoria">
     <nav>
       <a href="#problema">O problema</a>
       <a href="#como">Como trabalho</a>
@@ -105,50 +102,52 @@
 
 <div class="hero">
   <div class="wrap hero-grid">
-   <div>
-    <p class="kicker" style="color:var(--gold-soft)">Jimay Consultoria · Pessoas. Processos. Resultados.</p>
-    <h1>Da venda ao caixa, <span class="mark">sem apagar incêndios.</span></h1>
-    <p class="sub">Consultoria em excelência operacional para indústrias: processo e sistema em um só fluxo, do pedido ao lucro, com margem conhecida, prazo real e custo visível.</p>
-    <a class="btn" href="diagnostico.html">Fazer o diagnóstico gratuito</a>
-   </div>
-   <div class="como-fx" role="img" aria-label="Como a Jimay funciona: vender, precificar, planejar, produzir e lucrar, em um só fluxo">
-    <p class="tag">Como a Jimay funciona</p>
-    <div class="rail" id="rail"></div>
-    <div class="cena" id="cena"><small id="c-k"></small><b id="c-t"></b><span id="c-d"></span></div>
-    <div class="medidor"><div><span>Controle da operação (ilustrativo)</span><b id="m-n">20%</b></div><span class="t"><i id="m-b"></i></span></div>
-   </div>
+    <div>
+      <p class="kicker">Jimay Consultoria · Pessoas. Processos. Resultados.</p>
+      <h1>Da venda ao caixa, <em>sem apagar incêndios.</em></h1>
+      <p class="sub">Consultoria em excelência operacional para indústrias: processo e sistema em um só fluxo, com margem conhecida, prazo real e custo visível.</p>
+      <a class="btn pulse" href="diagnostico.html">Fazer o diagnóstico gratuito</a>
+    </div>
+    <div class="fx" role="img" aria-label="Como a Jimay funciona: vender, precificar, planejar, produzir e lucrar, em um só fluxo">
+      <p class="tag">Como a Jimay funciona</p>
+      <div class="rail" id="rail"></div>
+      <div class="cena" id="cena"><small id="c-k"></small><b id="c-t"></b><span id="c-d"></span></div>
+      <div class="medidor"><div><span>Controle da operação (ilustrativo)</span><b id="m-n">20%</b></div><span class="t"><i id="m-b"></i></span></div>
+    </div>
   </div>
 </div>
 
-<div class="lema"><div class="wrap"><p>“Empresas organizadas crescem, desorganizadas quebram, independente do tamanho.”</p></div></div>
+<div class="lema"><div class="wrap">
+  <p>“Empresas organizadas crescem, desorganizadas quebram. <span>Independente do tamanho.</span>”</p>
+</div></div>
 
 <section id="problema">
   <div class="wrap">
     <p class="kicker">O problema</p>
     <h2>Onde a margem vaza na indústria</h2>
-    <p style="max-width:720px;color:var(--muted);margin-bottom:32px">O problema raramente é falta de esforço. É a falta de um fluxo único que ligue venda, fábrica e caixa.</p>
+    <p style="max-width:720px;color:var(--muted);margin-bottom:32px">Raramente é falta de esforço. É falta de um fluxo único que ligue venda, fábrica e caixa.</p>
     <div class="grid g4">
-      <div class="card"><h3>Preço sem margem</h3><p>Vende-se barato e a perda só aparece depois que o pedido sai.</p></div>
-      <div class="card"><h3>Prazo sem base</h3><p>A data é prometida sem saber a capacidade real da fábrica.</p></div>
-      <div class="card"><h3>Custo invisível</h3><p>Refugo, retrabalho e hora de máquina se perdem pelo caminho.</p></div>
-      <div class="card"><h3>Tudo no dono</h3><p>Só ele sabe preço, prazo e prioridade. A empresa trava quando ele falta.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><h3>Preço sem margem</h3><p>Vende-se barato e a perda só aparece depois que o pedido sai.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Prazo sem base</h3><p>A data é prometida sem saber a capacidade real da fábrica.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 3l18 18M10.6 5.1A9.7 9.7 0 0112 5c5 0 9 4.5 10 7a16 16 0 01-3.2 4.2M6.2 6.2C3.9 7.7 2.4 9.8 2 12c1 2.5 5 7 10 7a9.8 9.8 0 004-.8"/></svg></div><h3>Custo invisível</h3><p>Refugo, retrabalho e hora de máquina somem na conta do mês.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg></div><h3>Tudo no dono</h3><p>Só ele sabe preço, prazo e prioridade. A empresa trava quando ele falta.</p></div>
     </div>
   </div>
 </section>
 
-<section id="como" style="background:#101216;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<section id="como" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <p class="kicker">Como trabalho</p>
     <h2>Método claro, sem surpresas</h2>
-    <p style="max-width:720px;color:var(--muted);margin-bottom:32px">Projeto de escopo fechado: prazo, reuniões e entregas definidos antes de começar. Sem cobrança por hora. Remoto por padrão, presencial no diagnóstico e no treinamento.</p>
+    <p style="max-width:760px;color:var(--muted);margin-bottom:32px">Projeto de escopo fechado: prazo, reuniões e entregas definidos antes de começar. Sem cobrança por hora. Remoto por padrão, presencial no diagnóstico e no treinamento.</p>
     <div class="grid g3">
-      <div class="card"><p class="num">ETAPA 1</p><h3>Diagnóstico</h3><p>Faça aqui no site, em 10 minutos, e veja a nota da sua operação. Depois, uma conversa de 30 a 40 minutos para ler o resultado juntos. Gratuito.</p></div>
+      <div class="card"><p class="num">ETAPA 1</p><h3>Diagnóstico</h3><p>Faça aqui no site, em 5 minutos, e veja a nota da sua operação. Depois, uma conversa de 30 a 40 minutos para ler o resultado juntos. Gratuito.</p></div>
       <div class="card"><p class="num">ETAPA 2</p><h3>Projeto</h3><p>Implantação área por área, junto com a sua equipe: cadastro, engenharia de produto, custo e preço, PCP, apontamento e pós-cálculo. Com o seu sistema atual ou com o Sistema Jimay.</p></div>
       <div class="card"><p class="num">ETAPA 3</p><h3>Governança</h3><p>Acompanhamento mensal dos números e mentoria dos líderes, para o ganho não se perder quando a rotina aperta.</p></div>
     </div>
-    <div class="grid g2" style="margin-top:20px">
-      <div class="card" style="border-top:4px solid var(--gold)"><h3>Pequena indústria</h3><p>A operação roda em planilhas soltas e depende do dono. Organizo o fluxo e implanto o Sistema Jimay, nosso software de gestão, junto com a equipe: o conhecimento sai da cabeça do dono e vira processo.</p></div>
-      <div class="card" style="border-top:4px solid #9A9EA6"><h3>Média e grande indústria</h3><p>O ERP existe, mas é subutilizado. Destravo o sistema que você já paga, levo o uso ao chão de fábrica e simplifico o que sobra de controle.</p></div>
+    <div class="grid g2" style="margin-top:22px">
+      <div class="card" style="border-top:4px solid var(--wine)"><h3>Pequena indústria</h3><p>A operação roda em planilhas soltas e depende do dono. Organizo o fluxo e implanto o Sistema Jimay, nosso software de gestão, junto com a equipe: o conhecimento sai da cabeça do dono e vira processo.</p></div>
+      <div class="card" style="border-top:4px solid var(--slate)"><h3>Média e grande indústria</h3><p>O ERP existe, mas é subutilizado. Destravo o sistema que você já paga, levo o uso ao chão de fábrica e simplifico o que sobra de controle.</p></div>
     </div>
     <p style="margin-top:24px;color:var(--muted)">Atendo indústrias de produção sob encomenda e seriada — gráfica, embalagem, confecção e setores afins — em todo o Brasil.</p>
   </div>
@@ -161,7 +160,7 @@
     <div class="quem" style="margin-top:28px">
       <img src="assets/rafael.jpg" alt="Rafael Medeiros">
       <div>
-        <h3 style="font-size:26px">Rafael Medeiros</h3>
+        <h3 style="font-size:25px">Rafael Medeiros</h3>
         <p style="color:var(--muted);margin:8px 0 4px">Gestor de Operações | Consultor e Mentor de Liderança Empresarial</p>
         <p style="margin-top:12px">Conheço esse fluxo por ter implantado na prática, do cadastro do produto ao pós-cálculo — do chão de fábrica à diretoria. O que apresento aqui é o que funciona na fábrica, explicado de um jeito que o dono e o time conseguem usar.</p>
         <div class="stats">
@@ -176,22 +175,22 @@
   </div>
 </section>
 
-<section id="diagnostico">
+<section id="diagnostico" style="background:var(--surface);border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="diag">
-      <p class="kicker" style="color:var(--gold-soft)">Comece por aqui</p>
-      <h2>Onde a sua fábrica está deixando dinheiro na mesa hoje?</h2>
-      <p>Responda 30 perguntas em cerca de 10 minutos e veja na hora a nota da sua operação, área por área, e o seu maior gargalo. É gratuito e sem compromisso.</p>
-      <a class="btn" href="diagnostico.html">Fazer o diagnóstico agora</a>
+      <p class="kicker">Comece por aqui</p>
+      <h2>Onde a sua fábrica está deixando dinheiro na mesa?</h2>
+      <p>Responda 12 perguntas em cerca de 5 minutos e veja na hora a nota da sua operação, área por área, e o seu maior gargalo. É gratuito, sem compromisso e as respostas ficam no seu aparelho.</p>
+      <a class="btn pulse" href="diagnostico.html">Fazer o diagnóstico agora</a>
       &nbsp;&nbsp;
-      <a class="btn-ghost" style="border-color:#D5D7DB;color:#FFFFFF" href="https://wa.me/5511984307823?text=Ol%C3%A1%2C%20Rafael.%20Quero%20conversar%20sobre%20a%20Jimay." target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <a class="btn-ghost" href="https://wa.me/5511984307823?text=Ol%C3%A1%2C%20Rafael.%20Quero%20conversar%20sobre%20a%20Jimay." target="_blank" rel="noopener">Falar no WhatsApp</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p><b style="color:var(--navy)">Jimay Consultoria</b> · Rafael Medeiros · <a href="https://wa.me/5511984307823">+55 11 98430-7823</a> · <a href="mailto:rafa.med.costa@gmail.com">rafa.med.costa@gmail.com</a></p>
+    <p><b style="color:var(--slate)">Jimay Consultoria</b> · Rafael Medeiros · <a href="https://wa.me/5511984307823">+55 11 98430-7823</a> · <a href="mailto:rafa.med.costa@gmail.com">rafa.med.costa@gmail.com</a> · <a href="https://www.linkedin.com/in/rafael-med-costa/" target="_blank" rel="noopener">LinkedIn</a></p>
   </div>
 </footer>
 
@@ -208,13 +207,11 @@
  for(var i=0;i<5;i++){h+='<span class="n">'+(i+1)+'</span>'+(i<4?'<span class="l"><i></i></span>':'');}
  rail.innerHTML=h;
  var ns=rail.querySelectorAll('.n'),ls=rail.querySelectorAll('.l'),cena=document.getElementById('cena');
- function show(k){
-  var p=P[k];
+ function show(k){var p=P[k];
   for(var i=0;i<5;i++){ns[i].className='n'+(i<k||k===5?' done':'')+(i===k?' on':'');}
   for(var j=0;j<4;j++){ls[j].className='l'+(j<k?' done':'');}
   document.getElementById('c-k').textContent=p[0];document.getElementById('c-t').textContent=p[1];document.getElementById('c-d').textContent=p[2];
-  document.getElementById('m-b').style.width=p[3]+'%';document.getElementById('m-n').textContent=p[3]+'%';
- }
+  document.getElementById('m-b').style.width=p[3]+'%';document.getElementById('m-n').textContent=p[3]+'%';}
  var k=0;show(0);
  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){show(5);return;}
  setInterval(function(){cena.classList.add('sai');setTimeout(function(){k=(k+1)%P.length;show(k);cena.classList.remove('sai');},350);},2800);

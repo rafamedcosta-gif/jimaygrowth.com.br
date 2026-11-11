@@ -82,14 +82,14 @@ pre{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px s
 @media(max-width:560px){.seg{grid-template-columns:repeat(2,1fr)}.res-row{grid-template-columns:110px 1fr 40px}.logo img{width:96px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
-<style>:root:root:root{--bg:#0B0C0E;--surface:#15171B;--tint:#1E2126;--fg:#F2F2F3;--muted:#A3A7AF;--line:#2A2D33;--accent:#B3202F;--accent-soft:#2A1216;--on-accent:#FFFFFF;--navy:#FFFFFF;--good:#6FCB9B;--good-soft:#1F3B31;--warn:#E5B35E;--warn-soft:#41331B;--bad:#F08A7A;--bad-soft:#47201F;--logo-bg:transparent;--focus:#E5505F;color-scheme:dark}.volta{display:inline-block;margin-top:14px;color:#E5505F;font-weight:600;text-decoration:none}.link{color:#E5505F}.wa{background:#1F7A4D}</style>
+<style>:root:root:root{--bg:#FAFAF9;--surface:#FFFFFF;--tint:#F3F1EE;--fg:#1F2329;--muted:#6B7280;--line:#E6E4E1;--accent:#6F172F;--accent-soft:#FBF3F5;--on-accent:#FFFFFF;--navy:#393A3F;--good:#1F7A4D;--good-soft:#E2F2E9;--warn:#8A5B0B;--warn-soft:#FBF0DA;--bad:#A8392A;--bad-soft:#F9E2DE;--logo-bg:transparent;--focus:#6F172F;color-scheme:light}.link{color:#6F172F}.wa{background:#1F7A4D}.volta{color:#6F172F}.volta{display:inline-block;margin-top:14px;color:#E5505F;font-weight:600;text-decoration:none}.link{color:#E5505F}.wa{background:#1F7A4D}</style>
 <div class="wrap">
  <a class="volta" href="index.html">← Voltar ao site</a>
  <header class="top">
-  <div class="logo"><img alt="Jimay Consultoria" src="assets/logo-jimay-vertical.png"></div>
-  <div><h1>Diagnóstico gratuito da sua operação</h1><p class="sub">Um presente da Jimay para a sua indústria. Responda 30 perguntas em cerca de 10 minutos: o resultado aparece no fim, com a nota geral, a nota por área e os seus três maiores gargalos. As respostas ficam só no seu aparelho.</p></div>
+  <div class="logo"><img alt="Jimay Consultoria" src="assets/jimay-vertical.png"></div>
+  <div><h1>Diagnóstico gratuito da sua operação</h1><p class="sub">Um presente da Jimay para a sua indústria. Responda 12 perguntas em cerca de 5 minutos: o resultado aparece no fim, com a nota geral, a nota por área e os seus três maiores gargalos. As respostas ficam só no seu aparelho.</p></div>
  </header>
- <div class="bar"><span><b id="count">0</b> de <b id="total">30</b> respostas</span><div class="track" aria-hidden="true"><i id="prog"></i></div><button class="link" id="demo" type="button" hidden>Ver exemplo preenchido</button><button class="link" id="reset" type="button">Limpar ficha</button></div>
+ <div class="bar"><span><b id="count">0</b> de <b id="total">12</b> respostas</span><div class="track" aria-hidden="true"><i id="prog"></i></div><button class="link" id="demo" type="button" hidden>Ver exemplo preenchido</button><button class="link" id="reset" type="button">Limpar ficha</button></div>
 
  <section>
   <h2>Empresa</h2>
@@ -122,24 +122,21 @@ pre{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px s
    <pre id="report"></pre>
    <div class="actions"><a class="btn wa" id="wa" href="https://wa.me/5511984307823" target="_blank" rel="noopener" style="text-decoration:none">Enviar meu resultado ao Rafael no WhatsApp</a><button class="btn ghost" id="copy" type="button">Copiar mini-relatório</button><span class="msg" id="copymsg" role="status"></span></div>
   </div>
+  <div class="card" id="pos-envio" hidden style="border-color:var(--accent);margin-top:14px"><b>Resultado enviado.</b> A ficha foi limpa deste aparelho para preservar os seus dados. O Rafael responde pelo WhatsApp com a leitura comentada, sem custo.</div>
   <p class="foot">Pontuação de 0 a 100 por área, a partir das respostas desta conversa. É um ponto de partida para priorizar, não uma auditoria. Envie o resultado pelo WhatsApp e receba, sem custo, a leitura comentada em uma conversa de 30 a 40 minutos.</p>
  </section>
 </div>
 <script>
 const AREAS=[
-{id:'com',nome:'Comercial e Cadastros',mod:'Comercial e Cadastros',imp:'pedido errado, retrabalho de cadastro e venda dependente de pessoas',q:['Cada produto tem um código único, usado por vendas, produção e financeiro?','Está definido quem lança um produto novo e quem valida o cadastro?','Carteira de pedidos e comissão são controladas fora da cabeça do vendedor?']},
-{id:'eng',nome:'Engenharia de Produto',mod:'Engenharia de Produto',imp:'cada pedido vira um projeto novo e o custo nunca é o mesmo',q:['Cada produto tem estrutura registrada (materiais, medidas, componentes)?','O roteiro (etapas, máquinas e tempos) está definido por produto?','Os itens que se repetem têm produto modelo com roteiro padrão?']},
-{id:'pre',nome:'Custo e Preço',mod:'Custo e Preço',imp:'vende-se sem saber a margem, e o desconto vira prejuízo',q:['Existe custo por hora de máquina ou de equipe, calculado e atualizado?','O preço sai de um cálculo (custo e margem), e não só do mercado ou da intuição?','Sabe-se a margem de cada pedido e o limite de desconto?']},
-{id:'pcp',nome:'PCP e Prazo',mod:'PCP',imp:'atraso de entrega, hora extra e fábrica apagando incêndio',q:['O prazo prometido ao cliente considera a capacidade real da fábrica?','Mede-se a entrega no prazo (pedidos entregues na data sobre o total)?','Existe programação visível da fábrica, revista toda semana, com ordem de produção?']},
-{id:'est',nome:'Compras e Estoque',mod:'Compras e Estoque',imp:'falta de material parando a produção ou dinheiro parado em estoque',q:['O saldo do estoque no controle bate com o físico?','Compras são feitas pela necessidade das ordens, com ponto de pedido?','Há inventário periódico e reserva de material por ordem?']},
-{id:'ter',nome:'Terceiros e Fiscal',mod:'Terceiros e Fiscal operacional',imp:'material perdido em terceiros e risco fiscal',q:['Serviços em terceiros têm controle de remessa, retorno e prazo?','Sabe-se de quem é o material em cada etapa (próprio, do cliente ou do terceiro)?','A nota sai com a operação fiscal correta, sem retrabalho?']},
-{id:'prd',nome:'Produção e Produtividade',mod:'Chão de fábrica',imp:'capacidade escondida: paga-se por horas que não viram produto',q:['Cada etapa é apontada (tempo, quantidade produzida e paradas)?','Sabe-se a produtividade real de cada máquina ou equipe contra o padrão (OEE ou equivalente)?','Sabe-se onde cada ordem está agora e o que está atrasado?']},
-{id:'qua',nome:'Qualidade e Desperdício',mod:'Chão de fábrica e Qualidade',imp:'material e horas jogados fora, e cliente insatisfeito',q:['Refugo, retrabalho e perda de material são medidos em quantidade e em reais?','Reclamações e devoluções são registradas, com causa e ação corretiva?','Há padrão de qualidade e inspeção por etapa, e não só no fim?']},
-{id:'fin',nome:'Financeiro',mod:'Financeiro operacional',imp:'caixa apertado mesmo com venda boa',q:['O fluxo de caixa dos próximos 30 dias é conhecido?','Contas a pagar e a receber são controladas por pedido ou cliente?','O prazo que se recebe é compatível com o que se paga?']},
-{id:'ger',nome:'Gerencial e Liderança',mod:'Gerencial e pós-cálculo, com mentoria de liderança',imp:'decisão no escuro e empresa dependente do dono',q:['O dono vê números por área sem pedir a ninguém?','Compara-se o orçado com o realizado depois de cada pedido?','Os gestores decidem sem depender do dono para tudo?']}];
+{id:'com',nome:'Comercial e Cadastro',mod:'Comercial e Cadastros',imp:'pedido errado, retrabalho e venda dependente de pessoas',q:['Cada produto tem um código único, usado por vendas, produção e financeiro?','Os pedidos são controlados em um só lugar, fora da cabeça do vendedor?']},
+{id:'eng',nome:'Produto e Ficha Técnica',mod:'Engenharia de Produto',imp:'cada pedido vira um projeto novo e o custo nunca é o mesmo',q:['Cada produto tem ficha técnica registrada (materiais, medidas, consumo)?','A sequência de produção (etapas, máquinas e tempos) está definida por produto?']},
+{id:'pre',nome:'Custo e Preço',mod:'Custo e Preço',imp:'vende-se sem saber a margem, e o desconto vira prejuízo',q:['O preço sai de um cálculo de custo e margem, e não do concorrente ou da intuição?','Sabe-se a margem de cada pedido e o limite de desconto que pode ser dado?']},
+{id:'pcp',nome:'PCP e Prazo',mod:'PCP',imp:'atraso de entrega, hora extra e fábrica apagando incêndio',q:['O prazo prometido ao cliente considera a capacidade real da fábrica?','Mede-se a entrega no prazo (pedidos entregues na data sobre o total)?']},
+{id:'fab',nome:'Produção e Perdas',mod:'Chão de fábrica e Qualidade',imp:'capacidade escondida e material jogado fora',q:['Cada etapa é apontada (tempo, quantidade produzida e paradas)?','Refugo, retrabalho e perda de material são medidos em quantidade e em reais?']},
+{id:'ger',nome:'Estoque, Caixa e Gestão',mod:'Compras, Estoque, Financeiro e Gerencial',imp:'falta de material, caixa apertado e decisão no escuro',q:['O saldo do estoque bate com o físico e a compra é feita antes de faltar?','O dono vê caixa, custo e resultado por área sem precisar pedir a ninguém?']}];
 const TOTAL=AREAS.reduce((s,a)=>s+a.q.length,0);
-const reco=(G,done)=>{if(G===null||!done.length)return '';const c=done[0];if(c.pct<34)return 'Há área crítica, com dinheiro vazando: projeto começando por '+c.a.nome+'.';if(G<67)return 'Controles parciais, operação dependente de pessoas: implantação por etapas, começando por '+c.a.nome+'.';return 'Gestão estruturada: o caminho é governança mensal ou mentoria, para manter e refinar.';};
 const nivel=p=>p<34?'Operação no improviso':p<67?'Controles parciais':'Gestão estruturada';
+const reco=(G,done)=>{if(G===null||!done.length)return '';const c=done[0];if(c.pct<34)return 'Há área crítica, com dinheiro vazando: projeto começando por '+c.a.nome+'.';if(G<67)return 'Controles parciais, operação dependente de pessoas: implantação por etapas, começando por '+c.a.nome+'.';return 'Gestão estruturada: o caminho é governança mensal ou mentoria, para manter e refinar.';};
 const OPT=['Não existe','Planilha solta','Existe, falha','Funciona'];
 const KEY='jimay-diagnostico-v2';
 let S={f:{},a:{},n:{}};
@@ -219,8 +216,19 @@ $('reset').addEventListener('click',()=>{
  AREAS.forEach(a=>$('n-'+a.id).value='');
  armed=false;b.textContent='Limpar ficha';$('copymsg').textContent='';render();
 });
+function limpaTudo(){
+ S={f:{},a:{},n:{}};try{localStorage.removeItem(KEY);}catch(e){}
+ document.querySelectorAll('.seg input').forEach(i=>i.checked=false);
+ ['empresa','contato','porte','perfil','abertura'].forEach(id=>{var e=$(id);if(e)e.value='';});
+ AREAS.forEach(a=>{var e=$('n-'+a.id);if(e)e.value='';});
+ render();
+}
+$('wa').addEventListener('click',function(){
+ var box=document.getElementById('pos-envio');
+ setTimeout(function(){limpaTudo();if(box){box.hidden=false;box.scrollIntoView({behavior:'smooth',block:'center'});}},400);
+});
 $('demo').addEventListener('click',()=>{
- const pad={com:[2,1,1],eng:[1,1,0],pre:[1,0,0],pcp:[0,0,1],est:[1,1,0],ter:[2,1,2],prd:[1,0,1],qua:[0,1,1],fin:[2,1,1],ger:[1,0,0]};
+ const pad={com:[2,1],eng:[1,0],pre:[1,0],pcp:[0,1],fab:[1,0],ger:[1,0]};
  S.a={};AREAS.forEach(a=>a.q.forEach((q,i)=>{S.a[a.id+i]=String(pad[a.id][i]);}));
  S.f={empresa:'Empresa Exemplo Ltda',contato:'Dono',porte:'20 a 99 funcionários',perfil:'Misto',abertura:'O dono calcula de cabeça, olhando o preço do concorrente.'};
  save();

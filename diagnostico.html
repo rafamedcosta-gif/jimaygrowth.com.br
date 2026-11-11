@@ -83,6 +83,20 @@ pre{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px s
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 <style>:root:root:root{--bg:#FAFAF9;--surface:#FFFFFF;--tint:#F3F1EE;--fg:#1F2329;--muted:#6B7280;--line:#E6E4E1;--accent:#6F172F;--accent-soft:#FBF3F5;--on-accent:#FFFFFF;--navy:#393A3F;--good:#1F7A4D;--good-soft:#E2F2E9;--warn:#8A5B0B;--warn-soft:#FBF0DA;--bad:#A8392A;--bad-soft:#F9E2DE;--logo-bg:transparent;--focus:#6F172F;color-scheme:light}.link{color:#6F172F}.wa{background:#1F7A4D}.volta{color:#6F172F}.volta{display:inline-block;margin-top:14px;color:#E5505F;font-weight:600;text-decoration:none}.link{color:#E5505F}.wa{background:#1F7A4D}</style>
+<style>
+#area-print{display:none}
+@media print{
+ body{background:#fff;padding:0}
+ .wrap{display:none!important}
+ #area-print{display:block!important;color:#1F2329;font-family:'Segoe UI',Tahoma,Arial,sans-serif}
+ #area-print .pr-top{display:flex;align-items:center;gap:18px;border-bottom:3px solid #6F172F;padding-bottom:14px;margin-bottom:18px}
+ #area-print .pr-top img{width:92px;height:auto}
+ #area-print h1{font-size:22px;color:#393A3F;margin:0}
+ #area-print .pr-data{color:#6B7280;font-size:13px}
+ #area-print pre{white-space:pre-wrap;word-break:break-word;font:14px/1.55 'Segoe UI',Tahoma,Arial,sans-serif;border:0;background:#fff;padding:0;margin:0}
+ #area-print .pr-foot{margin-top:20px;border-top:1px solid #D5D5D2;padding-top:10px;font-size:12px;color:#6B7280}
+}
+</style>
 <div class="wrap">
  <a class="volta" href="index.html">← Voltar ao site</a>
  <header class="top">
@@ -120,11 +134,16 @@ pre{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px s
    <div class="geral" id="geral"></div><div id="bars"></div>
    <div class="focus" id="focus"></div>
    <pre id="report"></pre>
-   <div class="actions"><a class="btn wa" id="wa" href="https://wa.me/5511984307823" target="_blank" rel="noopener" style="text-decoration:none">Enviar meu resultado ao Rafael no WhatsApp</a><button class="btn ghost" id="copy" type="button">Copiar mini-relatório</button><span class="msg" id="copymsg" role="status"></span></div>
+   <div class="actions"><button class="btn" id="pdf" type="button">Salvar meu resultado em PDF</button><a class="btn wa" id="wa" href="https://wa.me/5511984307823" target="_blank" rel="noopener" style="text-decoration:none">Enviar meu resultado ao Rafael no WhatsApp</a><button class="btn ghost" id="copy" type="button">Copiar em texto</button></div><p class="msg" style="margin-top:10px">O botão de PDF abre a janela de impressão do navegador: escolha “Salvar como PDF”. O WhatsApp abre com o resumo em texto; o PDF baixado você pode anexar na conversa.<span id="fecha-acoes"></span><span class="msg" id="copymsg" role="status"></span>
   </div>
-  <div class="card" id="pos-envio" hidden style="border-color:var(--accent);margin-top:14px"><b>Resultado enviado.</b> A ficha foi limpa deste aparelho para preservar os seus dados. O Rafael responde pelo WhatsApp com a leitura comentada, sem custo.</div>
+  <div class="card" id="pos-envio" hidden style="border-color:var(--accent);margin-top:14px"><b>Resultado enviado e ficha limpa deste aparelho.</b> Se você salvou o PDF, anexe-o na conversa do WhatsApp. O Rafael responde com a leitura comentada, sem custo.</div>
   <p class="foot">Pontuação de 0 a 100 por área, a partir das respostas desta conversa. É um ponto de partida para priorizar, não uma auditoria. Envie o resultado pelo WhatsApp e receba, sem custo, a leitura comentada em uma conversa de 30 a 40 minutos.</p>
  </section>
+</div>
+<div id="area-print" aria-hidden="true">
+ <div class="pr-top"><img src="assets/jimay-vertical.png" alt="Jimay Consultoria"><div><h1>Diagnóstico Jimay — resultado</h1><div class="pr-data" id="pr-data"></div></div></div>
+ <pre id="pr-corpo"></pre>
+ <div class="pr-foot">Jimay Consultoria · Rafael Medeiros · WhatsApp +55 11 98430-7823 · rafa.med.costa@gmail.com · jimaygrowth.com.br</div>
 </div>
 <script>
 const AREAS=[
@@ -180,7 +199,7 @@ function render(){
  if(!done.length){f.innerHTML='<div><small>Gargalo prioritário</small><strong>Responda ao menos uma área</strong></div>';}
  else{f.innerHTML=done.slice(0,3).map((r,i)=>'<div><small>'+(i==0?'Gargalo prioritário':i==1?'Segundo ponto':'Terceiro ponto')+'</small><strong>'+esc(r.a.nome)+'</strong><span class="msg">'+r.pct+' de 100. Costuma causar: '+esc(r.a.imp)+'.</span></div>').join('');}
  $('report').textContent=buildReport(rows,done,tot);
- {const F=S.f;let m='Olá, Rafael. Fiz o diagnóstico gratuito da Jimay.';if(F.empresa)m+='\nEmpresa: '+F.empresa;if(F.contato)m+='\nContato: '+F.contato;if(G!==null)m+='\nNota geral: '+G+' de 100 ('+nivel(G)+')';if(done.length)m+='\nMaior gargalo: '+done[0].a.nome+' ('+done[0].pct+')';m+='\nQuero receber a leitura comentada.';$('wa').href='https://wa.me/5511984307823?text='+encodeURIComponent(m);}
+ {const F=S.f;let m='Olá, Rafael. Fiz o diagnóstico gratuito da Jimay.';if(F.empresa)m+='\nEmpresa: '+F.empresa;if(F.contato)m+='\nContato: '+F.contato;if(G!==null)m+='\nNota geral: '+G+' de 100 ('+nivel(G)+')';rows.forEach(r=>{if(r.pct!==null)m+='\n- '+r.a.nome+': '+r.pct;});if(done.length)m+='\nMaior gargalo: '+done[0].a.nome;if(window.__R)m+='\nCaminho: '+window.__R;m+='\nQuero receber a leitura comentada. (Meu PDF está salvo; posso anexar.)';$('wa').href='https://wa.me/5511984307823?text='+encodeURIComponent(m);}
 }
 function buildReport(rows,done,tot){
  const F=S.f,d=new Date().toLocaleDateString('pt-BR');
@@ -223,9 +242,16 @@ function limpaTudo(){
  AREAS.forEach(a=>{var e=$('n-'+a.id);if(e)e.value='';});
  render();
 }
+function salvarPDF(){
+ document.getElementById('pr-corpo').textContent=$('report').textContent;
+ document.getElementById('pr-data').textContent='Gerado em '+new Date().toLocaleDateString('pt-BR');
+ window.print();
+}
+$('pdf').addEventListener('click',salvarPDF);
 $('wa').addEventListener('click',function(){
  var box=document.getElementById('pos-envio');
- setTimeout(function(){limpaTudo();if(box){box.hidden=false;box.scrollIntoView({behavior:'smooth',block:'center'});}},400);
+ limpaTudo();
+ if(box){box.hidden=false;box.scrollIntoView({behavior:'smooth',block:'center'});}
 });
 $('demo').addEventListener('click',()=>{
  const pad={com:[2,1],eng:[1,0],pre:[1,0],pcp:[0,1],fab:[1,0],ger:[1,0]};

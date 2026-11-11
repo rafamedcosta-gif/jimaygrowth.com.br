@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jimay Consultoria — Gestão operacional integrada para indústrias</title>
 <meta name="description" content="Consultoria em excelência operacional para indústrias: preço com margem conhecida, prazo com base real e custo visível, da venda ao caixa. Diagnóstico gratuito de 30 a 40 minutos.">
-<link rel="icon" href="assets/logo.png">
+<link rel="icon" href="assets/logo-jimay-vertical.png">
 <style>
   :root{
     --navy:#FFFFFF; --navy-2:#15171B; --gold:#B3202F; --gold-soft:#E5505F;
@@ -23,16 +23,39 @@
   .btn:hover{background:#CC2A3B}
   .btn-ghost{display:inline-block;border:2px solid var(--navy);color:var(--navy);font-weight:700;padding:14px 30px;border-radius:8px;text-decoration:none;font-size:18px}
   /* topo */
-  header{background:#FFFFFF;border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:10}
+  header{background:#0B0C0E;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;max-width:1080px;margin:0 auto}
-  .nav img{height:54px}
-  .nav nav a{color:#0B0C0E;text-decoration:none;font-weight:600;margin-left:22px;font-size:15px}
-  .nav nav a.cta{color:#B3202F}
+  .nav img{height:40px}
+  .nav nav a{color:#D5D7DB;text-decoration:none;font-weight:600;margin-left:22px;font-size:15px}
+  .nav nav a.cta{color:#FFFFFF;background:var(--gold);padding:9px 16px;border-radius:6px}
   /* hero */
   .hero{background:linear-gradient(160deg, #0B0C0E 0%, #15171B 100%);color:#D5D7DB;padding:96px 0;border-bottom:1px solid var(--line)}
   .hero h1{color:#FFFFFF;font-size:50px;max-width:760px;margin-bottom:20px}
   .hero p.sub{font-size:22px;max-width:680px;color:#D5D7DB;margin-bottom:36px}
   .hero .mark{color:var(--gold-soft)}
+
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .como-fx{background:#111317;border:1px solid var(--line);border-radius:16px;padding:28px;min-height:400px;display:flex;flex-direction:column;gap:18px}
+  .como-fx .tag{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold-soft)}
+  .rail{display:flex;align-items:center;gap:0}
+  .rail .n{width:38px;height:38px;border-radius:50%;border:2px solid #3A3E46;color:#9A9EA6;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex:none;transition:all .4s}
+  .rail .l{height:2px;background:#3A3E46;flex:1;position:relative;overflow:hidden}
+  .rail .l i{position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .6s}
+  .rail .n.done{border-color:#FFFFFF;color:#FFFFFF}
+  .rail .n.on{background:var(--gold);border-color:var(--gold);color:#FFFFFF;transform:scale(1.15)}
+  .rail .l.done i{transform:scaleX(1)}
+  .cena{flex:1;display:flex;flex-direction:column;justify-content:center;gap:8px;transition:opacity .35s,transform .35s}
+  .cena.sai{opacity:0;transform:translateY(8px)}
+  .cena small{color:#9A9EA6;font-size:14px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700}
+  .cena b{color:#FFFFFF;font-size:34px;line-height:1.15}
+  .cena span{color:#D5D7DB;font-size:18px}
+  .medidor{display:flex;flex-direction:column;gap:6px}
+  .medidor div{display:flex;justify-content:space-between;font-size:13px;color:#9A9EA6}
+  .medidor div b{color:#FFFFFF;font-variant-numeric:tabular-nums}
+  .medidor .t{height:8px;border-radius:8px;background:#22252B;overflow:hidden;display:block}
+  .medidor .t i{display:block;height:100%;width:20%;background:linear-gradient(90deg,#B3202F,#E5505F);transition:width .9s}
+  @media (prefers-reduced-motion:reduce){.rail .n,.rail .l i,.cena,.medidor .t i{transition:none}}
+  @media (max-width:860px){.hero-grid{grid-template-columns:1fr}.como-fx{min-height:340px}.cena b{font-size:26px}}
   /* cards */
   .grid{display:grid;gap:20px}
   .g4{grid-template-columns:repeat(4,1fr)}
@@ -70,7 +93,7 @@
 
 <header>
   <div class="nav">
-    <img src="assets/logo.png" alt="Jimay Consultoria">
+    <img src="assets/logo-jimay.png" alt="Jimay Consultoria">
     <nav>
       <a href="#problema">O problema</a>
       <a href="#como">Como trabalho</a>
@@ -81,11 +104,19 @@
 </header>
 
 <div class="hero">
-  <div class="wrap">
+  <div class="wrap hero-grid">
+   <div>
     <p class="kicker" style="color:var(--gold-soft)">Jimay Consultoria · Pessoas. Processos. Resultados.</p>
     <h1>Da venda ao caixa, <span class="mark">sem apagar incêndios.</span></h1>
     <p class="sub">Consultoria em excelência operacional para indústrias: processo e sistema em um só fluxo, do pedido ao lucro, com margem conhecida, prazo real e custo visível.</p>
     <a class="btn" href="diagnostico.html">Fazer o diagnóstico gratuito</a>
+   </div>
+   <div class="como-fx" role="img" aria-label="Como a Jimay funciona: vender, precificar, planejar, produzir e lucrar, em um só fluxo">
+    <p class="tag">Como a Jimay funciona</p>
+    <div class="rail" id="rail"></div>
+    <div class="cena" id="cena"><small id="c-k"></small><b id="c-t"></b><span id="c-d"></span></div>
+    <div class="medidor"><div><span>Controle da operação (ilustrativo)</span><b id="m-n">20%</b></div><span class="t"><i id="m-b"></i></span></div>
+   </div>
   </div>
 </div>
 
@@ -163,6 +194,32 @@
     <p><b style="color:var(--navy)">Jimay Consultoria</b> · Rafael Medeiros · <a href="https://wa.me/5511984307823">+55 11 98430-7823</a> · <a href="mailto:rafa.med.costa@gmail.com">rafa.med.costa@gmail.com</a></p>
   </div>
 </footer>
+
+<script>
+(function(){
+ var P=[
+  ['Passo 1','Vender','O pedido entra com cadastro único e produto definido.',34],
+  ['Passo 2','Precificar','Preço calculado, com margem conhecida antes de vender.',48],
+  ['Passo 3','Planejar','Prazo prometido com a capacidade real da fábrica.',62],
+  ['Passo 4','Produzir','Cada etapa apontada: tempo, quantidade e perda.',76],
+  ['Passo 5','Lucrar','Orçado contra realizado: você vê onde o dinheiro ficou.',90],
+  ['Resultado','Da venda ao caixa, em um só fluxo.','Comece pelo diagnóstico gratuito.',100]];
+ var rail=document.getElementById('rail'),h='';
+ for(var i=0;i<5;i++){h+='<span class="n">'+(i+1)+'</span>'+(i<4?'<span class="l"><i></i></span>':'');}
+ rail.innerHTML=h;
+ var ns=rail.querySelectorAll('.n'),ls=rail.querySelectorAll('.l'),cena=document.getElementById('cena');
+ function show(k){
+  var p=P[k];
+  for(var i=0;i<5;i++){ns[i].className='n'+(i<k||k===5?' done':'')+(i===k?' on':'');}
+  for(var j=0;j<4;j++){ls[j].className='l'+(j<k?' done':'');}
+  document.getElementById('c-k').textContent=p[0];document.getElementById('c-t').textContent=p[1];document.getElementById('c-d').textContent=p[2];
+  document.getElementById('m-b').style.width=p[3]+'%';document.getElementById('m-n').textContent=p[3]+'%';
+ }
+ var k=0;show(0);
+ if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){show(5);return;}
+ setInterval(function(){cena.classList.add('sai');setTimeout(function(){k=(k+1)%P.length;show(k);cena.classList.remove('sai');},350);},2800);
+})();
+</script>
 
 </body>
 </html>

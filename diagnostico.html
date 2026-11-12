@@ -136,7 +136,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px s
    <pre id="report"></pre>
    <div class="actions"><button class="btn" id="pdf" type="button">Salvar meu resultado em PDF</button><a class="btn wa" id="wa" href="https://wa.me/5511984307823" target="_blank" rel="noopener" style="text-decoration:none">Enviar meu resultado ao Rafael no WhatsApp</a><button class="btn ghost" id="copy" type="button">Copiar em texto</button></div><p class="msg" style="margin-top:10px">O botão de PDF abre a janela de impressão do navegador: escolha “Salvar como PDF”. O WhatsApp abre com o resumo em texto; o PDF baixado você pode anexar na conversa.<span id="fecha-acoes"></span><span class="msg" id="copymsg" role="status"></span>
   </div>
-  <div class="card" id="pos-envio" hidden style="border-color:var(--accent);margin-top:14px"><b>Resultado enviado e ficha limpa deste aparelho.</b> Se você salvou o PDF, anexe-o na conversa do WhatsApp. O Rafael responde com a leitura comentada, sem custo.</div>
+  <div class="card" id="pos-envio" hidden style="border-color:var(--accent);margin-top:14px"><b>Suas respostas foram apagadas deste aparelho.</b> O resultado continua nesta tela até você fechar a página, para você ainda salvar o PDF, copiar ou enviar ao Rafael no WhatsApp. Ele responde com a leitura comentada, sem custo.</div>
   <p class="foot">Pontuação de 0 a 100 por área, a partir das respostas desta conversa. É um ponto de partida para priorizar, não uma auditoria. Envie o resultado pelo WhatsApp e receba, sem custo, a leitura comentada em uma conversa de 30 a 40 minutos.</p>
  </section>
 </div>
@@ -223,7 +223,7 @@ function buildReport(rows,done,tot){
 $('copy').addEventListener('click',()=>{
  const txt=$('report').textContent,m=$('copymsg');
  const fb=()=>{const r=document.createRange();r.selectNodeContents($('report'));const s=getSelection();s.removeAllRanges();s.addRange(r);m.textContent='Texto selecionado. Use Ctrl+C para copiar.';};
- if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(()=>{m.textContent='Copiado.';},fb);}else fb();
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(()=>{m.textContent='Copiado.';encerra();},()=>{fb();encerra();});}else{fb();encerra();}
 });
 let armed=false;
 $('reset').addEventListener('click',()=>{
@@ -242,16 +242,28 @@ function limpaTudo(){
  AREAS.forEach(a=>{var e=$('n-'+a.id);if(e)e.value='';});
  render();
 }
+function apagaDados(){
+ S={f:{},a:{},n:{}};try{localStorage.removeItem(KEY);}catch(e){}
+ document.querySelectorAll('.seg input').forEach(i=>i.checked=false);
+ ['empresa','contato','porte','perfil','abertura'].forEach(id=>{var e=$(id);if(e)e.value='';});
+ AREAS.forEach(a=>{var e=$('n-'+a.id);if(e)e.value='';});
+}
+function encerra(){
+ apagaDados();
+ var box=document.getElementById('pos-envio');
+ if(box){box.hidden=false;}
+}
 function salvarPDF(){
  document.getElementById('pr-corpo').textContent=$('report').textContent;
  document.getElementById('pr-data').textContent='Gerado em '+new Date().toLocaleDateString('pt-BR');
  window.print();
+ encerra();
 }
 $('pdf').addEventListener('click',salvarPDF);
 $('wa').addEventListener('click',function(){
+ encerra();
  var box=document.getElementById('pos-envio');
- limpaTudo();
- if(box){box.hidden=false;box.scrollIntoView({behavior:'smooth',block:'center'});}
+ if(box){box.scrollIntoView({behavior:'smooth',block:'center'});}
 });
 $('demo').addEventListener('click',()=>{
  const pad={com:[2,1],eng:[1,0],pre:[1,0],pcp:[0,1],fab:[1,0],ger:[1,0]};

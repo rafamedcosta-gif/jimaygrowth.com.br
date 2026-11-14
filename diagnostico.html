@@ -26,7 +26,7 @@ body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px
 .wrap{max-width:880px;margin-inline:auto}
 header.top{display:flex;gap:20px;align-items:center;flex-wrap:wrap;padding-block:28px 12px}
 .logo{background:var(--logo-bg);border-radius:12px;padding:6px 10px;display:flex}
-.logo img{width:120px;height:auto;display:block}
+.logo img{width:96px;height:auto;display:block}
 h1{font-family:var(--display);font-size:clamp(28px,5vw,40px);line-height:1.1;margin:0;font-weight:700;text-wrap:balance}
 .sub{color:var(--muted);margin:4px 0 0;max-width:60ch}
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:14px}
@@ -79,7 +79,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px s
 .msg{font-size:14px;color:var(--muted)}
 .geral{display:flex;gap:18px;align-items:center;flex-wrap:wrap;background:var(--accent-soft);border-radius:12px;padding:14px 18px;margin-bottom:14px}.geral b{font-family:var(--display);font-size:44px;line-height:1}.geral span{font-size:15px}.geral strong{display:block;font-size:18px}
 .foot{margin-top:28px;font-size:13px;color:var(--muted)}
-@media(max-width:560px){.seg{grid-template-columns:repeat(2,1fr)}.res-row{grid-template-columns:110px 1fr 40px}.logo img{width:96px}}
+@media(max-width:560px){.seg{grid-template-columns:repeat(2,1fr)}.res-row{grid-template-columns:110px 1fr 40px}.logo img{width:80px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 <style>:root:root:root{--bg:#FAFAF9;--surface:#FFFFFF;--tint:#F3F1EE;--fg:#1F2329;--muted:#6B7280;--line:#E6E4E1;--accent:#6F172F;--accent-soft:#FBF3F5;--on-accent:#FFFFFF;--navy:#393A3F;--good:#1F7A4D;--good-soft:#E2F2E9;--warn:#8A5B0B;--warn-soft:#FBF0DA;--bad:#A8392A;--bad-soft:#F9E2DE;--logo-bg:transparent;--focus:#6F172F;color-scheme:light}.link{color:#6F172F}.wa{background:#1F7A4D}.volta{color:#6F172F}.volta{display:inline-block;margin-top:14px;color:#E5505F;font-weight:600;text-decoration:none}.link{color:#E5505F}.wa{background:#1F7A4D}</style>
@@ -100,7 +100,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px s
 <div class="wrap">
  <a class="volta" href="index.html">← Voltar ao site</a>
  <header class="top">
-  <div class="logo"><img alt="Jimay Consultoria" src="assets/jimay-vertical.png"></div>
+  <div class="logo"><img alt="Jimay" src="assets/jimay-oficial.png"></div>
   <div><h1>Diagnóstico gratuito da sua operação</h1><p class="sub">Um presente da Jimay para a sua indústria. Responda 12 perguntas em cerca de 5 minutos: o resultado aparece no fim, com a nota geral, a nota por área e os seus três maiores gargalos. As respostas ficam só no seu aparelho.</p></div>
  </header>
  <div class="bar"><span><b id="count">0</b> de <b id="total">12</b> respostas</span><div class="track" aria-hidden="true"><i id="prog"></i></div><button class="link" id="demo" type="button" hidden>Ver exemplo preenchido</button><button class="link" id="reset" type="button">Limpar ficha</button></div>

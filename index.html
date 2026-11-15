@@ -88,6 +88,16 @@
     .hero h1{font-size:34px} .lema p{font-size:21px} .diag{padding:32px 20px}
     .nav nav a{margin-left:12px;font-size:13px} .nav img{height:56px} .cena b{font-size:25px}
   }
+  .lista{list-style:none;margin-top:10px}
+  .lista li{padding:9px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .lista li:last-child{border-bottom:0}
+  .lista b{font-weight:600;color:var(--ink)}
+  .lista span{color:var(--wine);font-size:14px}
+  .mvv{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:22px}
+  .mvv>div{border-left:3px solid var(--wine);padding:6px 0 6px 16px}
+  .mvv small{text-transform:uppercase;letter-spacing:.12em;color:var(--wine);font-weight:700;font-size:12px}
+  .mvv p{color:var(--ink);margin-top:4px}
+  @media(max-width:760px){.mvv{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -97,6 +107,7 @@
     <img src="assets/jimay-oficial.png" alt="Jimay">
     <nav>
       <a href="#problema">O problema</a>
+      <a href="#atuacao">Atuação</a>
       <a href="#como">Como trabalho</a>
       <a href="#quem">Quem sou</a>
       <a class="cta" href="diagnostico.html">Diagnóstico gratuito</a>
@@ -107,9 +118,9 @@
 <div class="hero">
   <div class="wrap hero-grid">
     <div>
-      <p class="kicker">Jimay Consultoria · Pessoas. Processos. Resultados.</p>
+      <p class="kicker">Jimay Growth · Pessoas. Processos. Resultados.</p>
       <h1>Da venda ao caixa, <em>sem apagar incêndios.</em></h1>
-      <p class="sub">Consultoria em excelência operacional para indústrias: processo e sistema em um só fluxo, com margem conhecida, prazo real e custo visível.</p>
+      <p class="sub">A Jimay Growth ajuda pequenas, médias e grandes indústrias a organizar sua gestão, melhorar a eficiência operacional, controlar custos e buscar maior rentabilidade.</p>
       <a class="btn pulse" href="diagnostico.html">Fazer o diagnóstico gratuito</a>
     </div>
     <div class="fx" role="img" aria-label="Como a Jimay funciona: vender, precificar, planejar, produzir e lucrar, em um só fluxo">
@@ -139,7 +150,47 @@
   </div>
 </section>
 
-<section id="como" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<section id="atuacao" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <p class="kicker">Áreas de atuação</p>
+    <h2>Onde entregamos e o que integramos</h2>
+    <p style="max-width:760px;color:var(--muted);margin-bottom:32px">Atuamos onde o lucro se perde: preço feito sem custo real, prazo prometido sem capacidade, perdas que ninguém aponta e operação que depende do dono para tudo.</p>
+    <div class="grid g2">
+      <div class="card" style="border-top:4px solid var(--wine);border-radius:0 0 10px 10px">
+        <h3>Atuação direta</h3>
+        <ul class="lista">
+          <li><b>Custos, Orçamentos e Pricing</b><span>RKW · MC · Markup</span></li>
+          <li><b>Engenharia de Produto e Processos</b><span>BOM · Roteiros</span></li>
+          <li><b>PCP e Planejamento</b><span>MRP I/II · S&amp;OP · TOC</span></li>
+          <li><b>Operações e Performance Industrial</b><span>Lean · OEE · SMED · 5S</span></li>
+          <li><b>Pós-cálculo Industrial</b><span>Orçado × Realizado</span></li>
+          <li><b>Gestão Gerencial</b><span>KPIs · PDCA</span></li>
+        </ul>
+      </div>
+      <div class="card" style="border-top:4px solid var(--slate);border-radius:0 0 10px 10px">
+        <h3>Integração dos processos</h3>
+        <ul class="lista">
+          <li><b>Comercial e Desenvolvimento</b></li>
+          <li><b>Compras e Estoques</b><span>Curva ABC · Ponto de pedido</span></li>
+          <li><b>Logística e Expedição</b></li>
+          <li><b>Faturamento e Gestão Financeira</b></li>
+        </ul>
+        <p style="margin-top:14px">Conectamos processos, informações, responsabilidades e controles para que essas áreas trabalhem de forma coordenada.</p>
+      </div>
+    </div>
+    <div class="grid g2" style="margin-top:22px">
+      <div class="card"><h3>Como entregamos</h3><p>Cada módulo contratado é estruturado com ferramentas (planilhas ou sistema), manual de procedimentos, treinamento da equipe, testes e termo de aceite.</p></div>
+      <div class="card"><h3>Tecnologia própria, em desenvolvimento</h3><p><b>JIM:</b> sistema de gestão (ERP) projetado para integrar as áreas da indústria, da venda ao caixa.<br><b>MAY:</b> inteligência de gestão concebida para acompanhar indicadores, identificar desvios e alertar a direção antes que os problemas se transformem em prejuízo.</p></div>
+    </div>
+    <div class="mvv">
+      <div><small>Missão</small><p>Devolver ao dono da indústria o controle do prazo, da margem e do caixa.</p></div>
+      <div><small>Visão</small><p>Ser referência em organização operacional para a indústria brasileira.</p></div>
+      <div><small>Valores</small><p>Verdade do chão de fábrica · lucro real · método antes do software · simplicidade · respeito ao tempo do dono.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="como">
   <div class="wrap">
     <p class="kicker">Como trabalho</p>
     <h2>Método claro, sem surpresas</h2>
@@ -150,7 +201,7 @@
       <div class="card"><p class="num">ETAPA 3</p><h3>Governança</h3><p>Acompanhamento mensal dos números e mentoria dos líderes, para o ganho não se perder quando a rotina aperta.</p></div>
     </div>
     <div class="grid g2" style="margin-top:22px">
-      <div class="card" style="border-top:4px solid var(--wine)"><h3>Pequena indústria</h3><p>A operação roda em planilhas soltas e depende do dono. Organizo o fluxo e implanto o Sistema Jimay, nosso software de gestão, junto com a equipe: o conhecimento sai da cabeça do dono e vira processo.</p></div>
+      <div class="card" style="border-top:4px solid var(--wine)"><h3>Pequena indústria</h3><p>A operação roda em planilhas soltas e depende do dono. Organizo o fluxo junto com a equipe, com planilhas padronizadas ou com o Sistema Jimay (em desenvolvimento): o conhecimento sai da cabeça do dono e vira processo.</p></div>
       <div class="card" style="border-top:4px solid var(--slate)"><h3>Média e grande indústria</h3><p>O ERP existe, mas é subutilizado. Destravo o sistema que você já paga, levo o uso ao chão de fábrica e simplifico o que sobra de controle.</p></div>
     </div>
     <p style="margin-top:24px;color:var(--muted)">Atendo indústrias de produção sob encomenda e seriada — gráfica, embalagem, confecção e setores afins — em todo o Brasil.</p>
@@ -165,10 +216,10 @@
       <img src="assets/rafael.jpg" alt="Rafael Medeiros">
       <div>
         <h3 style="font-size:25px">Rafael Medeiros</h3>
-        <p style="color:var(--muted);margin:8px 0 4px">Gestor de Operações | Consultor e Mentor de Liderança Empresarial</p>
+        <p style="color:var(--muted);margin:8px 0 4px">Gestor de Operações · Fundador da Jimay Growth</p>
         <p style="margin-top:12px">Conheço esse fluxo por ter implantado na prática, do cadastro do produto ao pós-cálculo — do chão de fábrica à diretoria. O que apresento aqui é o que funciona na fábrica, explicado de um jeito que o dono e o time conseguem usar.</p>
         <div class="stats">
-          <div class="stat"><b>22 anos</b><span>de indústria</span></div>
+          <div class="stat"><b>20+ anos</b><span>de indústria</span></div>
           <div class="stat"><b>16 anos</b><span>na mesma operação</span></div>
           <div class="stat"><b>100+ pessoas</b><span>lideradas em 5 unidades</span></div>
           <div class="stat"><b>R$ 1 milhão</b><span>de economia real em um processo automatizado</span></div>

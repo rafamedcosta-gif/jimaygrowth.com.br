@@ -101,7 +101,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px s
  <a class="volta" href="index.html">← Voltar ao site</a>
  <header class="top">
   <div class="logo"><img alt="Jimay" src="assets/jimay-oficial.png"></div>
-  <div><h1>Diagnóstico gratuito da sua operação</h1><p class="sub">Um presente da Jimay para a sua indústria. Responda 12 perguntas em cerca de 5 minutos: o resultado aparece no fim, com a nota geral, a nota por área e os seus três maiores gargalos. As respostas ficam só no seu aparelho.</p></div>
+  <div><h1>Diagnóstico gratuito da sua operação</h1><p class="sub">Um presente da Jimay para a sua empresa. Responda 12 perguntas em cerca de 5 minutos: o resultado aparece no fim, com a nota geral, a nota por área e os seus três maiores gargalos. As respostas ficam só no seu aparelho.</p></div>
  </header>
  <div class="bar"><span><b id="count">0</b> de <b id="total">12</b> respostas</span><div class="track" aria-hidden="true"><i id="prog"></i></div><button class="link" id="demo" type="button" hidden>Ver exemplo preenchido</button><button class="link" id="reset" type="button">Limpar ficha</button></div>
 
@@ -150,7 +150,7 @@ const AREAS=[
 {id:'com',nome:'Comercial e Cadastro',mod:'Comercial e Cadastros',imp:'pedido errado, retrabalho e venda dependente de pessoas',q:['Cada produto tem um código único, usado por vendas, produção e financeiro?','Os pedidos são controlados em um só lugar, fora da cabeça do vendedor?']},
 {id:'eng',nome:'Produto e Ficha Técnica',mod:'Engenharia de Produto',imp:'cada pedido vira um projeto novo e o custo nunca é o mesmo',q:['Cada produto tem ficha técnica registrada (materiais, medidas, consumo)?','A sequência de produção (etapas, máquinas e tempos) está definida por produto?']},
 {id:'pre',nome:'Custo e Preço',mod:'Custo e Preço',imp:'vende-se sem saber a margem, e o desconto vira prejuízo',q:['O preço sai de um cálculo de custo e margem, e não do concorrente ou da intuição?','Sabe-se a margem de cada pedido e o limite de desconto que pode ser dado?']},
-{id:'pcp',nome:'PCP e Prazo',mod:'PCP',imp:'atraso de entrega, hora extra e fábrica apagando incêndio',q:['O prazo prometido ao cliente considera a capacidade real da fábrica?','Mede-se a entrega no prazo (pedidos entregues na data sobre o total)?']},
+{id:'pcp',nome:'PCP e Prazo',mod:'PCP',imp:'atraso de entrega, hora extra e operação apagando incêndio',q:['O prazo prometido ao cliente considera a capacidade real da operação?','Mede-se a entrega no prazo (pedidos entregues na data sobre o total)?']},
 {id:'fab',nome:'Produção e Perdas',mod:'Chão de fábrica e Qualidade',imp:'capacidade escondida e material jogado fora',q:['Cada etapa é apontada (tempo, quantidade produzida e paradas)?','Refugo, retrabalho e perda de material são medidos em quantidade e em reais?']},
 {id:'ger',nome:'Estoque, Caixa e Gestão',mod:'Compras, Estoque, Financeiro e Gerencial',imp:'falta de material, caixa apertado e decisão no escuro',q:['O saldo do estoque bate com o físico e a compra é feita antes de faltar?','O dono vê caixa, custo e resultado por área sem precisar pedir a ninguém?']}];
 const TOTAL=AREAS.reduce((s,a)=>s+a.q.length,0);
